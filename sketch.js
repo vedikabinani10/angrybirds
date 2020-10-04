@@ -18,7 +18,6 @@ function setup(){
     engine = Engine.create();
     world = engine.world;
 
-    
     ground = new Ground(600,height,1200,20);
     platform = new Ground(100,320,200,150);
 
@@ -64,7 +63,6 @@ function draw(){
     log4.display();
     log5.display();
     
-
     bird.display();
 
    slingshot.display();
@@ -76,4 +74,10 @@ function mouseDragged(){
 
 function mouseReleased(){
     slingshot.fly();
+}
+
+function keyPressed(){
+    if(keyCode===32){
+        slingshot.attach(bird.body);
+    }
 }
